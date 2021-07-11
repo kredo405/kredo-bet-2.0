@@ -1,0 +1,40 @@
+.matches {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 15px;
+    &__collapse {
+        margin-top: 30px;
+    }
+    &__btn {
+        background-color: #222232;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80px;
+        border: 1px solid #222232;
+        border-radius: 12px;
+        &:hover {
+            background-color: #21213b;
+            border: 1px solid #222232;
+            text-decoration: none;
+        }
+        &:active {
+            outline: none; 
+            background-color: #21213b !important;
+        }
+        &:focus {
+            background-color: #21213b;
+            outline: none;
+        }
+    }
+    &__img {
+        width: 100px;
+        margin-right: 20px;
+    }
+    &__dash {
+        margin: 0 30px;
+    }
+    &__team {
+        font-size: 24px;
+    }
+}
