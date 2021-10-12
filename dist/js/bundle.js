@@ -1,118 +1,13 @@
 /******/ (function() { // webpackBootstrap
-/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/js/modules/menu.js":
-/*!********************************!*\
-  !*** ./src/js/modules/menu.js ***!
-  \********************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ "./src/sass/style.scss":
+/*!*****************************!*\
+  !*** ./src/sass/style.scss ***!
+  \*****************************/
+/***/ (function() {
 
-__webpack_require__.r(__webpack_exports__);
-function hamburgerNenu() {
-    const hamburger = document.querySelector('.header__gamburger'),
-          closeElem = document.querySelector('.menu__toggle'),
-          menu = document.querySelector('.menu');
-
-    hamburger.addEventListener('click', () => {
-        menu.classList.add('active');
-    });
-
-    closeElem.addEventListener('click', () => {
-        menu.classList.remove('active');
-}); 
-} 
-
-/* harmony default export */ __webpack_exports__["default"] = (hamburgerNenu);
- 
-
-/***/ }),
-
-/***/ "./src/js/modules/searchMatches.js":
-/*!*****************************************!*\
-  !*** ./src/js/modules/searchMatches.js ***!
-  \*****************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-function searchMatches() {
-    let dateInput = document.querySelector('.search-matches__date'),
-    btnView = document.querySelector('.search-matches__button'),
-    coutnryList = document.querySelector('.search-matches__list-country'),
-    leagueList = document.querySelector('.search-matches__list-league'),
-    countryTogle = document.querySelector('.search-matches__btn-country'),
-    leagueTogle = document.querySelector('.search-matches__btn-laegue'),
-    leagueName,
-    countryName;
-
-// Получаем все страны
-function getCountries() {
-    const options = {
-        method: 'GET',
-        url: 'https://api-football-v1.p.rapidapi.com/v3/countries',
-        headers: {
-            'x-rapidapi-key': 'f570367049msh92d23c8fda1a817p1b03cfjsne8957d93c6e0',
-            'x-rapidapi-host': 'api-football-v1.p.rapidapi.com'
-        }
-    };
-
-    axios.request(options).then(function (response) {
-        console.log(response.data);
-        response.data.response.forEach((el) => {
-            let li = document.createElement('li');
-            li.innerHTML =`<a class='dropdown-item' href='#'><p class = 'dropdown-name'>${el.name}</p>
-            <img src = '${el.flag}' class ='country-flag'></a>`;
-            coutnryList.append(li);
-            li.addEventListener('click', () => {
-                countryTogle.innerHTML = `${el.name}`;
-                getLeagues(countryTogle.innerHTML);
-            });
-
-        });
-    }).catch(function (error) {
-        console.error(error);
-    });
-}
-    function getLeagues(country) {
-        const options = {
-            method: 'GET',
-            url: 'https://api-football-v1.p.rapidapi.com/v3/leagues',
-            params: { country: `${country}` },
-            headers: {
-                'x-rapidapi-key': 'f570367049msh92d23c8fda1a817p1b03cfjsne8957d93c6e0',
-                'x-rapidapi-host': 'api-football-v1.p.rapidapi.com'
-            }
-        };
-
-        axios.request(options).then(function (response) {
-            console.log(response.data);
-            let message = document.querySelector('.dropdown-menu__message');
-            let listLeagueArr = leagueList.querySelectorAll('li');
-            listLeagueArr.forEach(el => {
-                el.remove();
-            })
-            response.data.response.forEach((el) => {
-                let li = document.createElement('li');
-                li.innerHTML = `<a class='dropdown-item' href='#'><p class = 'dropdown-name'>${el.league.name}</p>
-                <img src = '${el.league.logo}' class ='league-logo'></a>`;
-                leagueList.append(li);
-                li.addEventListener('click', () => {
-                    leagueTogle.innerHTML = `${el.league.name}`;
-                });
-            });
-            if(message != null) {
-                message.remove();
-            }
-        }).catch(function (error) {
-            console.error(error);
-        });
-}
-getCountries();
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (searchMatches);
-
-
+throw new Error("Module parse failed: Unexpected character '@' (1:0)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n> @import 'libs/bootstrap-reboot.min';\n| @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');\n| ");
 
 /***/ })
 
@@ -143,6 +38,35 @@ getCountries();
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	!function() {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = function(module) {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				function() { return module['default']; } :
+/******/ 				function() { return module; };
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	}();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	!function() {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = function(exports, definition) {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	}();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	!function() {
+/******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
+/******/ 	}();
+/******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	!function() {
 /******/ 		// define __esModule on exports
@@ -156,19 +80,15 @@ getCountries();
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+// This entry need to be wrapped in an IIFE because it need to be in strict mode.
 !function() {
+"use strict";
 /*!**************************!*\
   !*** ./src/js/script.js ***!
   \**************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _modules_menu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/menu */ "./src/js/modules/menu.js");
-/* harmony import */ var _modules_searchMatches__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/searchMatches */ "./src/js/modules/searchMatches.js");
-
-
-
-(0,_modules_menu__WEBPACK_IMPORTED_MODULE_0__.default)();
-(0,_modules_searchMatches__WEBPACK_IMPORTED_MODULE_1__.default)();
+/* harmony import */ var _sass_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../sass/style.scss */ "./src/sass/style.scss");
+/* harmony import */ var _sass_style_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_sass_style_scss__WEBPACK_IMPORTED_MODULE_0__);
 
 }();
 /******/ })()
