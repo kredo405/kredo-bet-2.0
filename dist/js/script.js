@@ -1,5 +1,3 @@
-import hamburger from './modules/menu';
-import searchMatches from './modules/searchMatches';
+import getLeague from './modules/getLeague';
 
-hamburger();
-searchMatches();
+getLeague();

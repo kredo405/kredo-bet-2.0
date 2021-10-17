@@ -1,1 +1,3 @@
-import "../sass/style.scss";
+import getLeague from './modules/getLeague';
+
+getLeague();
